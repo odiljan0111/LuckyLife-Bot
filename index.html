@@ -4,24 +4,74 @@
   <title>LuckyLife Signal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { background: #0e0e0e; color: #00ff99; font-family: sans-serif; text-align: center; padding: 40px; }
-    .card { background: #1a1a1a; padding: 30px; border-radius: 15px; box-shadow: 0 0 20px #00ff99; }
-    .btn { margin-top: 20px; background: #00ff99; color: black; padding: 10px 20px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://i.postimg.cc/d1nSS6JR/file-000000007d6461f9876bcb16224aa012-3.png') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .card {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 40px 30px;
+      border-radius: 20px;
+      text-align: center;
+      color: #00ffcc;
+      box-shadow: 0 0 25px #00ffcc;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .signal-box {
+      font-size: 48px;
+      font-weight: bold;
+      background: #111;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 0 10px #00ffcc inset;
+      color: #00ffcc;
+    }
+
+    .btn {
+      background: linear-gradient(to right, #00ffcc, #009999);
+      color: black;
+      padding: 14px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
   <div class="card">
-    <h2>📡 LuckyLife Signal</h2>
-    <p id="signal">Yuklanmoqda...</p>
-    <button class="btn" onclick="generateSignal()">Yangilash</button>
+    <div class="title">📡 LuckyLife Signal</div>
+    <div id="signal" class="signal-box">KF: 1.78</div>
+    <button class="btn" onclick="generateSignal()">🚀 Signalni olish</button>
   </div>
 
   <script>
     function generateSignal() {
-      const signal = Math.random() < 0.5 ? "🟢 O‘yna – yaxshi koeff!" : "🔴 Kut – xavfli vaziyat!";
-      document.getElementById("signal").innerText = signal;
+      const kf = (Math.random() * (3 - 1) + 1).toFixed(2);
+      document.getElementById("signal").innerText = `KF: ${kf}`;
     }
-    generateSignal();
   </script>
 </body>
 </html>
