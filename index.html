@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LuckyLife Signal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { background: #0e0e0e; color: #00ff99; font-family: sans-serif; text-align: center; padding: 40px; }
+    .card { background: #1a1a1a; padding: 30px; border-radius: 15px; box-shadow: 0 0 20px #00ff99; }
+    .btn { margin-top: 20px; background: #00ff99; color: black; padding: 10px 20px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>📡 LuckyLife Signal</h2>
+    <p id="signal">Yuklanmoqda...</p>
+    <button class="btn" onclick="generateSignal()">Yangilash</button>
+  </div>
+
+  <script>
+    function generateSignal() {
+      const signal = Math.random() < 0.5 ? "🟢 O‘yna – yaxshi koeff!" : "🔴 Kut – xavfli vaziyat!";
+      document.getElementById("signal").innerText = signal;
+    }
+    generateSignal();
+  </script>
+</body>
+</html>
